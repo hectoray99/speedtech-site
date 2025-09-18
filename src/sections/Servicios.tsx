@@ -41,7 +41,7 @@ const services: Service[] = [
         se vea <strong className="font-semibold">profesional</strong> y convierta.
         Diseñamos sitios modernos con buenas prácticas
         (<span className="font-semibold">performance</span>,
-        <span className="font-semibold">SEO técnico básico</span> y
+        <span className="font-semibold"> SEO técnico básico</span> y 
         <span className="font-semibold">accesibilidad</span>),
         integramos formularios que escriben directo a WhatsApp o email,
         y conectamos pagos si lo necesitás.
