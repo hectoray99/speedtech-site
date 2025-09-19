@@ -5,6 +5,7 @@ import logo from "../assets/icon.png";
 
 const links = [
     { href: "#hero", label: "Inicio" },
+    { href: "#quienes", label: "¿Quiénes somos?" },
     { href: "#servicios", label: "Servicios" },
     { href: "#tech", label: "Tecnologías" },
     { href: "#porque", label: "¿Por qué elegirnos?" },
@@ -32,7 +33,7 @@ export default function Navbar() {
                 </a>
 
                 {/* Desktop links */}
-                <div className="hidden md:flex gap-6 text-base font-medium">
+                <div className="hidden md:flex gap-4 text-base font-medium">
                     {links.map((link) => (
                         <a
                             key={link.href}
