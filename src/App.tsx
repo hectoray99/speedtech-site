@@ -11,7 +11,6 @@ import Footer from "./components/Footer";
 
 import RevealLoop from "./components/RevealLoop";
 
-import { Analytics } from "@vercel/analytics/next"
 
 export default function App() {
   return (
@@ -57,7 +56,6 @@ export default function App() {
       <RevealLoop y={10} delay={0.18}>
         <Footer />
       </RevealLoop>
-      <Analytics />
     </main>
   );
 }
