@@ -41,7 +41,7 @@ const services: Service[] = [
         se vea <strong className="font-semibold">profesional</strong> y convierta.
         Diseñamos sitios modernos con buenas prácticas
         (<span className="font-semibold">performance</span>,
-        <span className="font-semibold"> SEO técnico básico</span> y 
+        <span className="font-semibold"> SEO técnico básico</span> y
         <span className="font-semibold"> accesibilidad</span>),
         integramos formularios que escriben directo a WhatsApp o email,
         y conectamos pagos si lo necesitás.
@@ -61,7 +61,7 @@ const fastItem: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.35,
+      duration: 0.25,
       ease: [0.17, 0.67, 0.83, 0.67], // easeOut
     },
   },
@@ -82,10 +82,33 @@ export default function Servicios() {
           <motion.div
             key={i}
             variants={fastItem}
-            whileHover={{ y: -4, boxShadow: "0 12px 28px rgba(0,0,0,.08)" }}
-            className="p-6 bg-white rounded-2xl shadow transition"
+            whileHover={{ y: -6, scale: 1.018 }}
+            whileTap={{ scale: 0.995 }}
+            transition={{
+              type: "spring",
+              stiffness: 420,   // respuesta rápida
+              damping: 28,      // suavidad sin rebote molesto
+              mass: 0.28
+            }}
+            className="
+    group p-6 rounded-2xl bg-white shadow
+    border border-gray-200/60
+    transform-gpu will-change-transform
+    transition-transform duration-150 ease-out
+    hover:shadow-lg
+  "
           >
-            <div className="flex justify-center mb-4">{srv.icon}</div>
+            <div className="flex justify-center mb-4">
+              {/* Icono con micro-feedback */}
+              <motion.div
+                whileHover={{ rotate: 2, scale: 1.06 }}
+                transition={{ type: "spring", stiffness: 500, damping: 20, mass: 0.2 }}
+                className="inline-block"
+              >
+                {srv.icon}
+              </motion.div>
+            </div>
+
             <h3 className="text-xl font-semibold mb-3">{srv.title}</h3>
             <ul className="text-gray-600 space-y-1 mb-5">
               {srv.bullets.map((b, j) => (
@@ -95,7 +118,12 @@ export default function Servicios() {
 
             <button
               onClick={() => open(i)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium transition"
+              className="
+      inline-flex items-center gap-2 px-4 py-2 rounded-xl
+      bg-blue-600 hover:bg-blue-700 text-white font-medium
+      transition-colors duration-150
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60
+    "
             >
               <Info className="w-4 h-4" />
               Saber más
