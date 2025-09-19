@@ -8,6 +8,7 @@ import Mision from "./sections/Mision";
 import CallToAction from "./sections/CallToAction";
 import FAQ from "./sections/FAQ";
 import Footer from "./components/Footer";
+import QuienesSomos from "./sections/QuienesSomos";
 
 import RevealLoop from "./components/RevealLoop";
 
@@ -20,6 +21,11 @@ export default function App() {
       {/* Hero */}
       <RevealLoop y={-24}>
         <Hero />
+      </RevealLoop>
+
+      {/* Quienes Somos */}
+      <RevealLoop y={24} delay={0.02}>
+        <QuienesSomos />
       </RevealLoop>
 
       {/* Servicios */}
